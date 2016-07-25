@@ -12,6 +12,7 @@
 		DBFD76A81D46934E00F651E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBFD76A61D46934E00F651E5 /* Main.storyboard */; };
 		DBFD76AA1D46934E00F651E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBFD76A91D46934E00F651E5 /* Assets.xcassets */; };
 		DBFD76AD1D46934E00F651E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBFD76AB1D46934E00F651E5 /* LaunchScreen.storyboard */; };
+		DBFD76B51D46938700F651E5 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD76B41D46938700F651E5 /* College.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DBFD76A91D46934E00F651E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBFD76AC1D46934E00F651E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBFD76AE1D46934E00F651E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBFD76B41D46938700F651E5 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				DBFD76A91D46934E00F651E5 /* Assets.xcassets */,
 				DBFD76AB1D46934E00F651E5 /* LaunchScreen.storyboard */,
 				DBFD76AE1D46934E00F651E5 /* Info.plist */,
+				DBFD76B41D46938700F651E5 /* College.swift */,
 			);
 			path = CollegeProfileBuilder;
 			sourceTree = "<group>";
@@ -96,6 +99,7 @@
 				TargetAttributes = {
 					DBFD769E1D46934E00F651E5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = C66S4U3X9U;
 					};
 				};
 			};
@@ -137,6 +141,7 @@
 			files = (
 				DBFD76A51D46934E00F651E5 /* ViewController.swift in Sources */,
 				DBFD76A31D46934E00F651E5 /* AppDelegate.swift in Sources */,
+				DBFD76B51D46938700F651E5 /* College.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,10 +256,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CollegeProfileBuilder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = roper.CollegeProfileBuilder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -262,10 +270,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CollegeProfileBuilder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = roper.CollegeProfileBuilder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
