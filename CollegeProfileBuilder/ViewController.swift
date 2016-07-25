@@ -24,6 +24,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = colleges[indexPath.row].name;
         return cell;
     }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete{
+            colleges.removeAtIndex(indexPath.row);
+            tableView.reloadData();
+        }
+    }
     
 }
 
