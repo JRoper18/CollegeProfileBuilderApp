@@ -11,6 +11,21 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var tableView: UITableView!
 
+    @IBAction func onTappedPlusButton(sender: AnyObject) {
+        let alert = UIAlertController(title: "Add College", message: "Don't worry, you can edit this later.", preferredStyle: .Alert);
+        alert.addTextFieldWithConfigurationHandler{
+            (textField) in textField.placeholder = "Add college name here";
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            alert.addAction(cancelAction);
+            let addCollegeAction = UIAlertAction(title: "Add", style: .Default){ (action) in
+                let collegeTextField = alert.textFields![0] as UITextField;
+                self.colleges.append(College(name: collegeTextField.text!, location: "Unknown", enrollment: 0, image: UIImage()));
+                self.tableView.reloadData();
+            }
+            alert.addAction(addCollegeAction)
+            self.presentViewController(alert, animated: true, completion: nil);
+        }
+    }
     var colleges : [College] = [College(name: "Example College", location: "Carhein", enrollment: 1000, image: UIImage())];
     override func viewDidLoad() {
         super.viewDidLoad()
