@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB06C1F71D46C7800041F631 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06C1F61D46C7800041F631 /* DetailViewController.swift */; };
 		DBFD76A31D46934E00F651E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD76A21D46934E00F651E5 /* AppDelegate.swift */; };
 		DBFD76A51D46934E00F651E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD76A41D46934E00F651E5 /* ViewController.swift */; };
 		DBFD76A81D46934E00F651E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBFD76A61D46934E00F651E5 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB06C1F61D46C7800041F631 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DBFD769F1D46934E00F651E5 /* CollegeProfileBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeProfileBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBFD76A21D46934E00F651E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBFD76A41D46934E00F651E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				DBFD76AB1D46934E00F651E5 /* LaunchScreen.storyboard */,
 				DBFD76AE1D46934E00F651E5 /* Info.plist */,
 				DBFD76B41D46938700F651E5 /* College.swift */,
+				DB06C1F61D46C7800041F631 /* DetailViewController.swift */,
 			);
 			path = CollegeProfileBuilder;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				DBFD76A51D46934E00F651E5 /* ViewController.swift in Sources */,
 				DBFD76A31D46934E00F651E5 /* AppDelegate.swift in Sources */,
 				DBFD76B51D46938700F651E5 /* College.swift in Sources */,
+				DB06C1F71D46C7800041F631 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 				DBFD76B31D46934E00F651E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

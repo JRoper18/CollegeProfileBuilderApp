@@ -52,6 +52,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         colleges.insert(college, atIndex: destinationIndexPath.row);
         
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! DetailViewController
+        let index = tableView.indexPathForSelectedRow?.row
+        dvc.college = colleges[index!];
+        dvc.collegeIndex = index!
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete{
             colleges.removeAtIndex(indexPath.row);
