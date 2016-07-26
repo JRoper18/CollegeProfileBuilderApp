@@ -22,14 +22,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             alert.addAction(cancelAction);
             let addCollegeAction = UIAlertAction(title: "Add", style: .Default){ (action) in
                 let collegeTextField = alert.textFields![0] as UITextField;
-                self.colleges.append(College(name: collegeTextField.text!, location: "Unknown", enrollment: 0, image: UIImage()));
+                self.colleges.append(College(name: collegeTextField.text!, location: "Unknown", enrollment: 0, image: UIImage(), url: NSURL()));
                 self.tableView.reloadData();
             }
             alert.addAction(addCollegeAction)
             self.presentViewController(alert, animated: true, completion: nil);
         }
     }
-    var colleges : [College] = [College(name: "Example College", location: "Carhein", enrollment: 1000, image: UIImage())];
+    var colleges : [College] = [College(name: "Example College", location: "Carhein", enrollment: 1000, image: UIImage(), url: NSURL())];
     override func viewDidLoad() {
         super.viewDidLoad()
         editSwitch.on = false;

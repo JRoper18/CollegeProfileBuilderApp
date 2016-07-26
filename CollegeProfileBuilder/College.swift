@@ -13,10 +13,12 @@ class College: NSObject {
     var location: String;
     var enrollment: Int;
     var image: UIImage;
-    init(name: String, location: String, enrollment: Int, image: UIImage){
+    var url: NSURL;
+    init(name: String, location: String, enrollment: Int, image: UIImage, url: NSURL){
         self.name = name;
         self.location = location;
         self.enrollment = enrollment;
         self.image = image;
+        self.url = url;
     }
 }
