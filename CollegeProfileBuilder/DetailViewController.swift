@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+import MapKit
+class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var websiteTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -62,7 +62,21 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
             let dvc = segue.destinationViewController as! ViewController
             dvc.colleges[collegeIndex] = college;
         }
+        else{
+            let dvc = segue.destinationViewController as! MapViewController
+            dvc.locationString = locationTextField.text!
+            dvc.pinTitle = self.nameTextField.text!;
+            dvc.span = MKCoordinateSpanMake(0.1, 0.1)
+
+
+            
+        }
      }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        presentViewController(MapViewController(), animated: true, completion: nil)
+        return true;
+    }
     
     
 }
