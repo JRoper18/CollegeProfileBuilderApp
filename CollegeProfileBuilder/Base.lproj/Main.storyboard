@@ -81,29 +81,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCE-Ll-Yek">
-                                <rect key="frame" x="54" y="336" width="48" height="30"/>
+                                <rect key="frame" x="252" y="200" width="48" height="30"/>
                                 <state key="normal" title="Library"/>
                                 <connections>
                                     <action selector="onLibraryButtonTap:" destination="jtM-x2-4BG" eventType="touchUpInside" id="sIK-YV-Yo8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJX-aQ-x8G">
-                                <rect key="frame" x="210" y="336" width="54" height="30"/>
+                                <rect key="frame" x="249" y="238" width="54" height="30"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
                                     <action selector="onCameraButtonTap:" destination="jtM-x2-4BG" eventType="touchUpInside" id="bDz-dU-tlI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAr-9j-HtD">
-                                <rect key="frame" x="143" y="354" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="onSaveButtonPressed:" destination="jtM-x2-4BG" eventType="touchUpInside" id="ehA-hd-2og"/>
-                                    <segue destination="159-4C-GY0" kind="show" identifier="SegueToMainView" id="rNV-1R-OgU"/>
-                                </connections>
-                            </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZO-uD-c2M">
-                                <rect key="frame" x="37" y="200" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="200" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="jP1-nF-8c5"/>
                                 </constraints>
@@ -145,6 +137,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAr-9j-HtD">
+                                <rect key="frame" x="259" y="276" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onSaveButtonPressed:" destination="jtM-x2-4BG" eventType="touchUpInside" id="ehA-hd-2og"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -176,10 +175,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tyB-8a-S0l">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtE-ui-5Ab">
-                                <rect key="frame" x="103" y="492" width="115" height="30"/>
-                                <state key="normal" title="Use My Location"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJk-sg-H0v">
                                 <rect key="frame" x="143" y="530" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
@@ -188,6 +183,9 @@
                                 <rect key="frame" x="20" y="72" width="280" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ajT-Dh-TQq" id="rM6-M9-gyP"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
