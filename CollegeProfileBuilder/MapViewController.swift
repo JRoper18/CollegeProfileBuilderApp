@@ -10,6 +10,9 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController {
+    
+    @IBOutlet weak var locationTextField: UITextField!
+    
     @IBOutlet weak var mapView: MKMapView!
     var pinTitle : String!;
     var span: MKCoordinateSpan!;
@@ -18,10 +21,9 @@ class MapViewController: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad();
         let geocoder = CLGeocoder()
-        
+        locationTextField.text = locationString;
         geocoder.geocodeAddressString(locationString, completionHandler: { (placeMarks, error) in
-            print("OOOOH")
-            
+
             if error != nil{
                 print(error)
             }
@@ -29,8 +31,6 @@ class MapViewController: UIViewController {
             //I WAS SO CONFUSED AND SPENT A HOURS TRYING TO FIGURE OUR WHY IT DIDNT WORK
             //I DID IT  
             else{
-                print("EEEY");
-                
                 let placemark = placeMarks!.first as CLPlacemark!;
                 self.location = placemark.location!.coordinate
                 self.displayMap()
@@ -47,6 +47,10 @@ class MapViewController: UIViewController {
         pin.title = self.pinTitle;
         mapView.addAnnotation(pin);
         mapView.setRegion(region, animated: true)
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! DetailViewController;
+        dvc.college.location = locationTextField.text!;
     }
     
     

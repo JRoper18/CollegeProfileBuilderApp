@@ -9,10 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    @IBOutlet weak var editSwitch: UISwitch!
     @IBOutlet weak var tableView: UITableView!
-    @IBAction func onEditSwitch(sender: AnyObject) {
-        tableView.editing = editSwitch.on;
+    @IBOutlet weak var editButtonState: UIBarButtonItem!
+    @IBAction func onEditButton(sender: AnyObject) {
+        tableView.editing = !tableView.editing;
     }
     @IBAction func onTappedPlusButton(sender: AnyObject) {
         let alert = UIAlertController(title: "Add College", message: "Don't worry, you can edit this later.", preferredStyle: .Alert);
@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var colleges : [College] = [College(name: "Example College", location: "Carhein", enrollment: 1000, image: UIImage(), url: NSURL())];
     override func viewDidLoad() {
         super.viewDidLoad()
-        editSwitch.on = false;
+        tableView.editing = false;
         
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
