@@ -72,11 +72,4 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
             
         }
      }
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder();
-        presentViewController(MapViewController(), animated: true, completion: nil)
-        return true;
-    }
-    
-    
 }

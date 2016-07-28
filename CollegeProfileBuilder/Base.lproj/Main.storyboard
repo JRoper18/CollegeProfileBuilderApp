@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896" y="321"/>
+            <point key="canvasLocation" x="906" y="321"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="BgV-E9-92n">
@@ -97,6 +97,8 @@
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZO-uD-c2M">
                                 <rect key="frame" x="0.0" y="200" width="240" height="128"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="VAw-Xc-Sx8"/>
+                                    <constraint firstAttribute="width" constant="240" id="Xfj-7s-ank"/>
                                     <constraint firstAttribute="height" constant="150" id="jP1-nF-8c5"/>
                                 </constraints>
                             </imageView>
@@ -109,9 +111,6 @@
                                 <rect key="frame" x="37" y="120" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="jtM-x2-4BG" id="0mh-wL-rHw"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-0P-sXq">
                                 <rect key="frame" x="37" y="168" width="97" height="30"/>

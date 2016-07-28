@@ -27,7 +27,6 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     func getAddress(){
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(locationString, completionHandler: { (placeMarks, error) in
-            
             if error != nil{
                 print(error)
             }
@@ -35,9 +34,25 @@ class MapViewController: UIViewController, UITextFieldDelegate {
                 //I WAS SO CONFUSED AND SPENT A HOURS TRYING TO FIGURE OUR WHY IT DIDNT WORK
                 //I DID IT
             else{
-                let placemark = placeMarks!.first as CLPlacemark!;
-                self.location = placemark.location!.coordinate
-                self.displayMap()
+                if placeMarks!.count == 1 {
+                    self.location = placeMarks!.first!.location!.coordinate;
+                    self.displayMap()
+
+                }
+                else{
+                    let alertController = UIAlertController(title: nil, message: "A standard alert.", preferredStyle: .ActionSheet)
+                    for placemark in placeMarks!{
+                        let newLocationAction = UIAlertAction(title: placemark.name, style: .Default){ (action) in
+                            self.location = placemark.location!.coordinate;
+                            self.displayMap()
+                        }
+                        alertController.addAction(newLocationAction);
+                    }
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
+                }
+                
                 
             }
             
@@ -51,7 +66,7 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     }
     func displayMap(){
         let center = self.location;
-        let region = MKCoordinateRegionMake(center, span);
+        let region = MKCoordinateRegionMake(center, self.span);
         let pin = MKPointAnnotation();
         pin.coordinate = center;
         pin.title = self.pinTitle;
